@@ -17,7 +17,8 @@ public class RegistrationFromPage {
     private ResultStableComponent resultStableComponent = new ResultStableComponent();
     private SelenideElement firstNameInput = $("#firstName"),
             lastNameInput = $("#lastName"),
-            emailInput = $("#userEmail");
+            emailInput = $("#userEmail"),
+            phoneNumberInput = $("#userNumber");
 
     public RegistrationFromPage openPage(String url) {
         open(url);
@@ -63,6 +64,12 @@ public class RegistrationFromPage {
     }
     public RegistrationFromPage checkResult(String key, String value) {
         resultStableComponent.checkResult(key, value);
+
+        return this;
+    }
+
+    public RegistrationFromPage setNumberPhone(String value) {
+        phoneNumberInput.setValue(value);
 
         return this;
     }

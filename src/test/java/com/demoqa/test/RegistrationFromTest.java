@@ -27,10 +27,10 @@ public class RegistrationFromTest {
         .setFirstName("Alex")
         .setLastName("Egorov")
         .setEmail("Alex@egorov.com")
-        .setGender("Other");
+        .setGender("Other")
+        .setNumberPhone("1234567890")
+        .setBirthDay("30", "July","2008");
 
-        $("#userNumber").setValue("1234567890");
-        registrationFromTest.setBirthDay("30", "July","2008");
         $("#subjectsInput").setValue("Math").pressEnter();
         $("#hobbiesWrapper").$(byText("Sports")).click();
         $("#currentAddress").setValue("Some address 1");
