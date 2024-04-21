@@ -18,7 +18,12 @@ public class RegistrationFromPage {
     private SelenideElement firstNameInput = $("#firstName"),
             lastNameInput = $("#lastName"),
             emailInput = $("#userEmail"),
-            phoneNumberInput = $("#userNumber");
+            phoneNumberInput = $("#userNumber"),
+            subjectInput = $("#subjectsInput"),
+            hobbiesWrapperInput = $("#hobbiesWrapper"),
+            currentAddressInput = $("#currentAddress"),
+            stateCityWrapperInput = $("#stateCity-wrapper"),
+            stateCityInput = $("#stateCity-wrapper");
 
     public RegistrationFromPage openPage(String url) {
         open(url);
@@ -70,6 +75,37 @@ public class RegistrationFromPage {
 
     public RegistrationFromPage setNumberPhone(String value) {
         phoneNumberInput.setValue(value);
+
+        return this;
+    }
+
+    public RegistrationFromPage setSubject(String value) {
+        subjectInput.setValue(value).pressEnter();
+
+        return this;
+    }
+
+    public RegistrationFromPage setHobbiesWrapper(String value) {
+        hobbiesWrapperInput.$(byText(value)).click();
+
+        return this;
+    }
+
+    public RegistrationFromPage setCurrentAddress(String value) {
+        currentAddressInput.setValue(value);
+
+
+        return this;
+    }
+
+    public RegistrationFromPage setStateCityWrapper(String value) {
+        stateCityWrapperInput.$(byText(value)).click();
+
+        return this;
+    }
+
+    public RegistrationFromPage setStateCity(String value) {
+        stateCityWrapperInput.$(byText(value)).click();
 
         return this;
     }

@@ -29,15 +29,14 @@ public class RegistrationFromTest {
         .setEmail("Alex@egorov.com")
         .setGender("Other")
         .setNumberPhone("1234567890")
-        .setBirthDay("30", "July","2008");
-
-        $("#subjectsInput").setValue("Math").pressEnter();
-        $("#hobbiesWrapper").$(byText("Sports")).click();
-        $("#currentAddress").setValue("Some address 1");
+        .setBirthDay("30", "July","2008")
+        .setSubject("Math")
+        .setHobbiesWrapper("Sport")
+        .setCurrentAddress("Some address 1");
         $("#state").click();
-        $("#stateCity-wrapper").$(byText("NCR")).click();
+        registrationFromTest.setStateCityWrapper("NCR");
         $("#city").click();
-        $("#stateCity-wrapper").$(byText("Delhi")).click();
+        registrationFromTest.setStateCity("Delhi");
         $("#submit").click();
 
         registrationFromTest.checkResultTableVisible()
